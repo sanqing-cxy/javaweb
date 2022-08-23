@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <template>
+        <el-table
+                :data="tableData"
+                style="width: 100%"
+                :row-class-name="tableRowClassName"
+                @selection-change="handleSelectionChange">
+            <el-table-column
+                    type="selection"
+                    width="55">
+            </el-table-column>
+            <el-table-column
+                    type="index"
+                    width="50">
+            </el-table-column>
+            <el-table-column
+                    prop="brandName"
+                    label="品牌名称"
+                    align="center">
+            </el-table-column>
+            <el-table-column
+                    prop="companyName"
+                    label="企业名称"
+                    align="center">
+            </el-table-column>
+            <el-table-column
+                    prop="ordered"
+                    align="center"
+                    label="排序">
+            </el-table-column>
+            <el-table-column
+                    prop="status"
+                    align="center"
+                    label="当前状态">
+            </el-table-column>
+            <el-table-column
+                    align="center"
+                    label="操作">
+                <el-row>
+                    <el-button type="primary">修改</el-button>
+                    <el-button type="danger">删除</el-button>
+                </el-row>
+            </el-table-column>
+        </el-table>
+    </template>
+
+</div>
+
+<script src="js/vue.js"></script>
+<script src="element-ui/lib/index.js"></script>
+<link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css">
+<script src="js/axios-0.18.0.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data(){
+            return{
+                tableData: [{
+                    brandName: '华为',
+                    companyName: '华为科技有限公司',
+                    ordered: '100',
+                    status: "1"
+                }, {
+                    brandName: '华为',
+                    companyName: '华为科技有限公司',
+                    ordered: '100',
+                    status: "1"
+                }, {
+                    brandName: '华为',
+                    companyName: '华为科技有限公司',
+                    ordered: '100',
+                    status: "1"
+                }, {
+                    brandName: '华为',
+                    companyName: '华为科技有限公司',
+                    ordered: '100',
+                    status: "1"
+                }]
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
